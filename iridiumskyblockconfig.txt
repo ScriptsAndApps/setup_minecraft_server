@@ -14,7 +14,7 @@ defaultIslandPublic: true
 voidTeleport: false
 netherIslands: true
 endIslands: true
-respawnOnIsland: false
+respawnOnIsland: true
 obsidianBucket: true
 patreonMessage: true
 islandMenu: true
