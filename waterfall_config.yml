@@ -1,0 +1,70 @@
+enforce_secure_profile: false
+server_connect_timeout: 5000
+listeners:
+- bind_local_address: true
+  force_default_server: true
+  forced_hosts:
+    pvp.md-5.net: lobby
+  host: 0.0.0.0:25565
+  max_players: 2000
+  motd: |-
+    &d&l||&a&l Creepers Survival &d&l|| - No Server Online
+    &d||&e Survival&r&k SP&b SkyBlock&r&k SP&d Chat Lobby&r&k SP&9 Fun &d||
+  ping_passthrough: false
+  priorities:
+  - lobby
+  - survival
+  - sky
+  proxy_protocol: false
+  query_enabled: false
+  query_port: 25565
+  tab_list: GLOBAL_PING
+  tab_size: 60
+remote_ping_cache: -1
+network_compression_threshold: 256
+permissions:
+  admin:
+  - bungeecord.command.alert
+  - bungeecord.command.end
+  - bungeecord.command.ip
+  - bungeecord.command.reload
+  - bungeecord.command.kick
+  default:
+  - bungeecord.command.server
+  - bungeecord.command.list
+log_pings: true
+connection_throttle_limit: 3
+prevent_proxy_connections: false
+timeout: 30000
+player_limit: -1
+ip_forward: true
+groups:
+  md_5:
+  - admin
+remote_ping_timeout: 5000
+connection_throttle: -1
+log_commands: false
+stats: 40cb528f-1c7c-4ae2-b5cb-6b00a4a872e6
+online_mode: true
+forge_support: true
+disabled_commands:
+- disabledcommandhere
+servers:
+  lobby:
+    address: 193.110.160.210:27211
+    motd: |-
+      &d&l||&a&l Creepers Survival &d&l|| - Hub
+      &d||&e Survival&r&k SP&b SkyBlock&r&k SP&d Chat Lobby&r&k SP&9 Fun &d||
+    restricted: false
+  sky:
+    address: 193.110.160.210:27201
+    motd: |-
+      &d&l||&a&l Creepers Survival &d&l|| - Skyblock
+      &d||&e Survival&r&k SP&b SkyBlock&r&k SP&d Chat Lobby&r&k SP&9 Fun &d||
+    restricted: false
+  survival:
+    address: 193.110.160.210:27200
+    motd:  |-
+      &d&l||&a&l Creepers Survival &d&l|| - Survival
+      &d||&e Survival&r&k SP&b SkyBlock&r&k SP&d Chat Lobby&r&k SP&9 Fun &d||
+    restricted: false
