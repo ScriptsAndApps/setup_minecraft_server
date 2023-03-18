@@ -8,7 +8,7 @@ TIME=20
 
 
 while [ true ]; do
-    java -Xmx$MAXRAM -Xms$MINRAM -jar $JAR nogui
+    sudo java -Xmx$MAXRAM -Xms$MINRAM -jar $JAR nogui
     if [[ ! -d "exit_codes" ]]; then
         mkdir "exit_codes";
     fi
