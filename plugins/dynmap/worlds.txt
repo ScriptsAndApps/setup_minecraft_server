@@ -1,0 +1,76 @@
+%YAML 1.1
+---
+worlds:
+-   name: world
+    title: Main world
+    enabled: true
+    extrazoomout: 6
+    maps:
+    -   class: org.dynmap.hdmap.HDMap
+        name: flat
+        title: Flat
+        prefix: flat
+        perspective: iso_SE_30_lowres
+        shader: stdtexture
+        lighting: shadows
+        mapzoomin: 5
+    -   class: org.dynmap.hdmap.HDMap
+        name: surface
+        title: Surface
+        prefix: t
+        perspective: iso_SE_30_lowres
+        shader: stdtexture
+        lighting: shadows
+        mapzoomin: 4
+    -   class: org.dynmap.hdmap.HDMap
+        name: cave
+        title: Cave
+        prefix: ct
+        perspective: iso_SE_30_lowres
+        shader: cave
+        lighting: default
+        mapzoomin: 4
+-   name: world_nether
+    title: n world
+    enabled: true
+    extrazoomout: 20
+    maps:
+    -   class: org.dynmap.hdmap.HDMap
+        name: flat
+        title: Flat
+        prefix: flat
+        perspective: iso_SE_30_lowres
+        shader: stdtexture
+        lighting: nethershadows
+        background: '#300806'
+        mapzoomin: 5
+    -   class: org.dynmap.hdmap.HDMap
+        name: nether
+        title: Surface
+        prefix: nt
+        perspective: iso_SE_30_lowres
+        shader: stdtexture
+        lighting: nethershadows
+        background: '#300806'
+        mapzoomin: 5
+-   name: world_the_end
+    title: e world
+    enabled: true
+    extrazoomout: 20
+    maps:
+    -   class: org.dynmap.hdmap.HDMap
+        name: flat
+        title: Flat
+        prefix: flat
+        perspective: iso_SE_30_lowres
+        shader: stdtexture
+        lighting: brightnight
+        mapzoomin: 5
+    -   class: org.dynmap.hdmap.HDMap
+        name: the_end
+        title: Surface
+        prefix: st
+        perspective: iso_SE_30_lowres
+        shader: stdtexture
+        lighting: brightnight
+        mapzoomin: 5
