@@ -1,0 +1,97 @@
+sudo su
+
+#adduser ubunturoot
+#nano /etc/ssh/sshd_config <- AllowUsers ubunturoot
+#usermod -a -G ubuntu ubunturoot
+#usermod -a -G root ubunturoot
+
+echo PermitRootLogin yes >> /etc/ssh/sshd_config
+service ssh reload
+
+apt update -y
+
+sudo systemctl disable --now apache2
+apt -y install openjdk-17-jre nginx certbot python3-certbot-nginx php php-cli php-fpm php-gd php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath
+
+systemctl start nginx
+systemctl enable nginx
+
+systemctl start php8.1-fpm
+systemctl enable php8.1-fpm
+
+
+chmod 777 /var/www/html/
+chmod 777 /var/www/html/*
+chmod 777 /home/ubuntu/
+chmod 777 /home/ubuntu/*
+chmod 777 /home/
+chmod 777 /home/*
+
+sudo service nginx reload
+
+wget https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/515/downloads/waterfall-1.19-515.jar
+mv waterfall-1.19-515.jar waterfall.jar
+mkdir plugins
+cd plugins
+wget https://github.com/lucko/BungeeGuard/releases/download/v1.3.3/BungeeGuard.jar
+mkdir BungeeGuard
+cd BungeeGuard
+echo token: yGBJoYLgCayRvLkR0jTMuwBj4gmLHVXFrO5066zdLdNhfRLG279N8Nuh69nhPbKz >> token.yml
+cd ..
+cd ..
+
+wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/waterfall_config.yml
+mv waterfall_config.yml config.yml
+wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/run.sh
+wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/startserver.sh
+wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/dynmap.sh
+
+
+#################################
+
+certbot --nginx --domains example.gith.me
+
+
+https://papermc.io/downloads#Waterfall
+https://github.com/lucko/BungeeGuard/releases/
+
+
+#################################
+
+
+echo "What is the (sub)domain name you want to use for Dynmap? (Eg. map.yoursite.com)"                                                                                                                   
+read ccdomain                                                                                                                                                     
+                                                                                                                                                                  
+echo "What is the IP address of your Minecraft server and the port Dynmap is running on (Eg. 192.168.1.101:8192)"                                                                                   
+read ccip                                                                                                                                                         
+                                                                                                                                                                  
+echo " server {                                                                                                                                                   
+        server_name $ccdomain;                                                                                                                                    
+        listen 80;                                                                                                                                                
+        listen [::]:80;     
+
+		error_page 502 /500.php;
+		error_page 504 /500.php;
+		location = /500.php {
+					root /var/www/html;
+					internal;		
+					include snippets/fastcgi-php.conf;
+					fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+			}
+        access_log /var/log/nginx/reverse-access.log;                                                                                                             
+        error_log /var/log/nginx/reverse-error.log;                                                                                                               
+        location / { 
+		
+					add_header Expires 'Tue, 03 Jul 2001 06:00:00 GMT';
+					add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
+					add_header Cache-Control 'post-check=0, pre-check=0';
+					add_header Pragma 'no-cache';
+					add_header Connection 'close';
+					
+                    proxy_pass http://$ccip;                                                                                                                      
+  }                                                                                                                                                               
+} " > /etc/nginx/sites-available/$ccdomain.conf                                                                                                                   
+                                                                                                                                                                  
+ln -s /etc/nginx/sites-available/$ccdomain.conf /etc/nginx/sites-enabled/$ccdomain.conf                                                                           
+                                                                                                                                                                  
+certbot --nginx --domains $ccdomain                                                                                                                                     
