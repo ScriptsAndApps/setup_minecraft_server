@@ -36,7 +36,7 @@ cd plugins
 wget https://github.com/lucko/BungeeGuard/releases/download/v1.3.3/BungeeGuard.jar
 mkdir BungeeGuard
 cd BungeeGuard
-echo token: yGBJoYLgCayRvLkR0jTMuwBj4gmLHVXFrO5066zdLdNhfRLG279N8Nuh69nhPbKz >> token.yml
+echo token: xGBJoYLgCayRvLkR0jTMuwBj4gmLHVXFrO5066zdLdNhfRLG279N8Nuh69nhPbKz >> token.yml
 cd ..
 cd ..
 
