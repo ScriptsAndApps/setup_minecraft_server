@@ -1,5 +1,5 @@
 sudo su
-
+passwd root $private 
 #adduser ubunturoot
 #nano /etc/ssh/sshd_config <- AllowUsers ubunturoot
 #usermod -a -G ubuntu ubunturoot
