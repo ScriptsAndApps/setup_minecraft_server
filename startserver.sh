@@ -4,7 +4,7 @@
 JAR=waterfall.jar
 MAXRAM=20024M
 MINRAM=1024M
-TIME=20
+TIME=2
 
 
 while [ true ]; do
