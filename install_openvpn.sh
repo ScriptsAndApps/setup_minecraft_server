@@ -224,6 +224,7 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
 	if [[ "$os" = "debian" || "$os" = "ubuntu" ]]; then
 		apt-get update
 		apt-get install -y --no-install-recommends openvpn openssl ca-certificates $firewall
+		systemctl enable openvpn
 	elif [[ "$os" = "centos" ]]; then
 		yum install -y epel-release
 		yum install -y openvpn openssl ca-certificates tar $firewall
@@ -235,6 +236,9 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
 	if [[ "$firewall" == "firewalld" ]]; then
 		systemctl enable --now firewalld.service
 	fi
+	
+	systemctl enable openvpn
+	
 	# Get easy-rsa
 	easy_rsa_url='https://github.com/OpenVPN/easy-rsa/releases/download/v3.1.2/EasyRSA-3.1.2.tgz'
 	mkdir -p /etc/openvpn/server/easy-rsa/
@@ -565,3 +569,5 @@ else
 		;;
 	esac
 fi
+
+
