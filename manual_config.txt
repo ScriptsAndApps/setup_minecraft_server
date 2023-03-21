@@ -20,8 +20,8 @@ sudo su
 #nano /etc/ssh/sshd_config <- AllowUsers skyblock
 
 
-echo PermitRootLogin yes >> /etc/ssh/sshd_config
-service ssh reload
+#echo PermitRootLogin yes >> /etc/ssh/sshd_config
+#service ssh reload
 
 apt update -y
 
