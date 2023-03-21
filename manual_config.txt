@@ -1,7 +1,7 @@
 #add trottle/lag to vpn
 #sudo tc qdisc add dev tun0 root netem delay 500ms
 # and turn it off with
-#sudo tc qdisc del dev tun root netem
+#sudo tc qdisc del dev tun0 root netem
 
 #sudo su
 #sudo passwd root $private 
