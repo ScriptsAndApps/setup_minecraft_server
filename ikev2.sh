@@ -138,7 +138,7 @@ debconf-set-selections <<< "postfix postfix/mailname string ${VPNHOST}"
 debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
 
 apt-get -o Acquire::ForceIPv4=true install -y \
-  language-pack-en postfix mutt unattended-upgrades certbot uuid-runtime \
+  language-pack-en postfix mutt unattended-upgrades iptables-persistent  certbot uuid-runtime \
   strongswan libstrongswan-standard-plugins strongswan-libcharon libcharon-extra-plugins
 
 # in 22.04 libcharon-standard-plugins is replaced with libcharon-extauth-plugins
