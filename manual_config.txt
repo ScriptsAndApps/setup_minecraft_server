@@ -71,6 +71,8 @@ sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/star
 sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/dynmap.sh -O /home/$USER/dynmap.sh
 sudo chmod 777 *
 
+nano /home/$USER/plugins/BungeeGuard/token.yml
+
 
 #################################
 
