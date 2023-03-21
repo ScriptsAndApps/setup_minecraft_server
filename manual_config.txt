@@ -57,10 +57,14 @@ sudo wget https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/515/
 sudo mv /home/$USER/waterfall-1.19-515.jar /home/$USER/waterfall.jar
 sudo chmod 777 *
 sudo mkdir /home/$USER/plugins
+sudo chmod 777 /home/$USER/plugins/
 sudo chmod 777 *
 sudo wget https://github.com/lucko/BungeeGuard/releases/download/v1.3.3/BungeeGuard.jar -O /home/$USER/plugins/BungeeGuard.jar
 sudo chmod 777 *
 sudo mkdir /home/$USER/plugins/BungeeGuard
+sudo chmod 777 /home/$USER/plugins/BungeeGuard
+sudo chmod 777 *
+sudo touch /home/$USER/plugins/BungeeGuard/token.yml
 sudo chmod 777 *
 echo "token: xGBJoYLgCayRvLkR0jTMuwBj4gmLHVXFrO5066zdLdNhfRLG279N8Nuh69nhPbKz" >> /home/$USER/plugins/BungeeGuard/token.yml
 sudo chmod 777 *
