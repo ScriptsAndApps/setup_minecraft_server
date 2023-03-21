@@ -259,13 +259,10 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
 	chmod o+x /etc/openvpn/server/
 	# Generate key for tls-crypt
 	openvpn --genkey --secret /etc/openvpn/server/tc.key
-	# Create the DH parameters file using the predefined ffdhe2048 group
+	# Create the DH parameters file using the predefined
 	
-
 openssl dhparam -out dh1024.pem 1024
 mv dh1024.pem /etc/openvpn/server/dh.pem
-
-
 
 
 	# Generate server.conf
