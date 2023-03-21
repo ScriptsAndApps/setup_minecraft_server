@@ -70,9 +70,10 @@ sudo mv /home/$USER/waterfall_config.yml /home/$USER/config.yml
 echo '#!/bin/sh
 screen -d -m -S "mc__server" bash /home/$USER/startserver.sh' >> /home/$USER/run.sh
 
+sudo rm run.sh
 
 echo '#!/bin/sh
-screen -d -m -S "mc__server" bash /home/$USER/startserver.sh' >> /home/$USER/startserver.sh
+screen -d -m -S "mc__server" bash /home/'$USER'/startserver.sh' >> /home/$USER/run.sh
 
 #sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/run.sh -O /home/$USER/run.sh
 
@@ -82,10 +83,12 @@ sudo chmod 777 *
 
 nano /home/$USER/plugins/BungeeGuard/token.yml
 
+sudo rm startserver.sh
+
 echo '#!/bin/bash
 
 #Path where mc should run - include the / at the front
-HOMEPTH=/home/ubuntu
+HOMEPTH=/home/'$USER'
 
 cd $HOMEPTH/
 JAR=$HOMEPTH/waterfall.jar
@@ -111,7 +114,7 @@ while [ true ]; do
     else
         echo "------------------- SERVER RESTARTS -------------------";
     fi
-done'
+done' >> startserver.sh
 #sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/startserver.sh -O /home/$USER/startserver.sh
 sudo chmod 777 /home/$USER/startserver.sh
 
