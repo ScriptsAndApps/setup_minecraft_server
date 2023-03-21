@@ -6,10 +6,10 @@ passwd root $private
 #usermod -a -G root ubunturoot
 
 
-#echo  skyblock ALL=(ALL) NOPASSWD:ALL  >> /etc/sudoers.d/90-cloud-init-users
+#echo  "skyblock ALL=(ALL) NOPASSWD:ALL " >> /etc/sudoers.d/90-cloud-init-users
 #add user skyblock sudo
 
-#echo  survival ALL=(ALL) NOPASSWD:ALL  >> /etc/sudoers.d/90-cloud-init-users
+#echo  "survival ALL=(ALL) NOPASSWD:ALL " >> /etc/sudoers.d/90-cloud-init-users
 #add user survival sudo
 #3x
 
