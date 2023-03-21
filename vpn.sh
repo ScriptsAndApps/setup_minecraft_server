@@ -223,8 +223,8 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
 	fi
 	if [[ "$os" = "debian" || "$os" = "ubuntu" ]]; then
 		apt-get update
-		#apt-get install -y --no-install-recommends openvpn openssl ca-certificates $firewall
-		apt-get install -y --no-install-recommends openvpn openssl ca-certificates
+		apt-get install -y --no-install-recommends openvpn openssl ca-certificates $firewall
+		#apt-get install -y --no-install-recommends openvpn openssl ca-certificates
 		systemctl enable openvpn-server@server
 	elif [[ "$os" = "centos" ]]; then
 		yum install -y epel-release
