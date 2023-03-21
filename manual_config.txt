@@ -145,6 +145,21 @@ sudo chmod 777 /home/$USER/startserver.sh
 
 
 
+#crontab -e
+#@reboot  /home/user/startup.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #################################
 
