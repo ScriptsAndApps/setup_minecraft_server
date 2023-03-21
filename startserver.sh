@@ -2,7 +2,7 @@
 #!/bin/bash
 
 JAR=waterfall.jar
-MAXRAM=20024M
+MAXRAM=2024M
 MINRAM=1024M
 TIME=2
 
