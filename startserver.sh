@@ -1,7 +1,14 @@
 
 #!/bin/bash
 
-JAR=waterfall.jar
+
+#Path where mc should run - include the / at end and front
+HOMEPTH=/home/ubuntu/
+
+
+cd $HOMEPTHw
+JAR=$HOMEPTHwaterfall.jar
+
 MAXRAM=2024M
 MINRAM=1024M
 TIME=2
