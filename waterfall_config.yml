@@ -1,5 +1,5 @@
 enforce_secure_profile: false
-server_connect_timeout: 5000
+server_connect_timeout: 6000
 listeners:
 - bind_local_address: true
   force_default_server: true
@@ -15,8 +15,11 @@ listeners:
   - lobby
   - survival
   - sky
+  - lobby
+  - survival
+  - lobby
   proxy_protocol: false
-  query_enabled: false
+  query_enabled: true
   query_port: 25565
   tab_list: GLOBAL_PING
   tab_size: 60
@@ -32,10 +35,10 @@ permissions:
   default:
   - bungeecord.command.server
   - bungeecord.command.list
-log_pings: true
-connection_throttle_limit: 3
+log_pings: false
+connection_throttle_limit: 10
 prevent_proxy_connections: false
-timeout: 30000
+timeout: 3000
 player_limit: -1
 ip_forward: true
 groups:
@@ -53,18 +56,18 @@ servers:
   lobby:
     address: 193.110.160.210:27211
     motd: |-
-      &d&l||&a&l Creepers Survival &d&l|| - Hub
+      &d&l||&a&l Creepers Survival &d&l|| - hub.gith.me
       &d||&e Survival&r&k SP&b SkyBlock&r&k SP&d Chat Lobby&r&k SP&9 Fun &d||
     restricted: false
   sky:
     address: 193.110.160.210:27201
     motd: |-
-      &d&l||&a&l Creepers Survival &d&l|| - Skyblock
+      &d&l||&a&l Creepers Survival &d&l|| - skyblock.gith.me 
       &d||&e Survival&r&k SP&b SkyBlock&r&k SP&d Chat Lobby&r&k SP&9 Fun &d||
     restricted: false
   survival:
     address: 193.110.160.210:27200
     motd:  |-
-      &d&l||&a&l Creepers Survival &d&l|| - Survival
+      &d&l||&a&l Creepers Survival &d&l|| - survival.gith.me
       &d||&e Survival&r&k SP&b SkyBlock&r&k SP&d Chat Lobby&r&k SP&9 Fun &d||
     restricted: false
