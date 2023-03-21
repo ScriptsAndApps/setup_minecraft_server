@@ -236,9 +236,6 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
 	if [[ "$firewall" == "firewalld" ]]; then
 		systemctl enable --now firewalld.service
 	fi
-	
-	systemctl enable openvpn
-	
 	# Get easy-rsa
 	easy_rsa_url='https://github.com/OpenVPN/easy-rsa/releases/download/v3.1.2/EasyRSA-3.1.2.tgz'
 	mkdir -p /etc/openvpn/server/easy-rsa/
@@ -261,9 +258,18 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
 	openvpn --genkey --secret /etc/openvpn/server/tc.key
 	# Create the DH parameters file using the predefined ffdhe2048 group
 
+echo '-----BEGIN DH PARAMETERS-----
+MIIBCAKCAQEA//////////+t+FRYortKmq/cViAnPTzx2LnFg84tNpWp4TZBFGQz
++8yTnc4kmz75fS/jY2MMddj2gbICrsRhetPfHtXV/WVhJDP1H18GbtCFY2VVPe0a
+87VXE15/V8k1mE8McODmi3fipona8+/och3xWKE2rec1MKzKT0g6eXq8CrGCsyT7
+YdEIqUuyyOP7uWrat2DX9GgdT0Kj3jlN9K5W7edjcrsZCwenyO4KbXCeAvzhzffi
+7MA0BM0oNC9hkXL+nOmFg/+OTxIy7vKBg8P+OxtMb61zO7X8vC7CIAXFjvGDfRaD
+ssbzSibBsu/6iGtCOGEoXJf//////////wIBAg==
+-----END DH PARAMETERS-----' > /etc/openvpn/server/dh2.pem
+
+
 openssl dhparam -out dh1024.pem 1024
 mv dh1024.pem /etc/openvpn/server/dh.pem
-
 
 	# Generate server.conf
 	echo "local $ip
@@ -324,7 +330,7 @@ server 10.8.0.0 255.255.255.0" > /etc/openvpn/server/server.conf
 	esac
 	echo 'push "block-outside-dns"' >> /etc/openvpn/server/server.conf
 	echo "keepalive 10 120
-cipher AES-256-GCM
+cipher AES-256-CBC
 user nobody
 group $group_name
 persist-key
@@ -424,7 +430,7 @@ persist-key
 persist-tun
 remote-cert-tls server
 auth SHA512
-cipher AES-256-GCM
+cipher AES-256-CBC
 ignore-unknown-option block-outside-dns
 verb 3" > /etc/openvpn/server/client-common.txt
 	# Enable and start the OpenVPN service
