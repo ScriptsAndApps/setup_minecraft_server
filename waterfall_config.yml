@@ -18,6 +18,7 @@ listeners:
   - lobby
   - survival
   - lobby
+  - sky
   proxy_protocol: false
   query_enabled: true
   query_port: 25565
