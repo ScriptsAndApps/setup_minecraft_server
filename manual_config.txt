@@ -49,22 +49,29 @@ sudo chmod 777 /home/*
 
 sudo service nginx reload
 
-sudo wget https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/515/downloads/waterfall-1.19-515.jar
-sudo mv waterfall-1.19-515.jar waterfall.jar
-sudo mkdir plugins
-sudo cd plugins
-sudo wget https://github.com/lucko/BungeeGuard/releases/download/v1.3.3/BungeeGuard.jar
-sudo mkdir BungeeGuard
-sudo cd BungeeGuard
-sudo echo token: xGBJoYLgCayRvLkR0jTMuwBj4gmLHVXFrO5066zdLdNhfRLG279N8Nuh69nhPbKz >> token.yml
-sudo cd ..
-sudo cd ..
+cd /home/$USER
 
-sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/waterfall_config.yml
-sudo mv waterfall_config.yml config.yml
-wsudo get https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/run.sh
-sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/startserver.sh
-sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/dynmap.sh
+sudo wget https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/515/downloads/waterfall-1.19-515.jar /home/$USER/waterfall-1.19-515.jar
+sudo mv /home/$USER/waterfall-1.19-515.jar /home/$USER/waterfall.jar
+sudo chmod 777 *
+sudo mkdir /home/$USER/plugins
+sudo chmod 777 *
+sudo wget https://github.com/lucko/BungeeGuard/releases/download/v1.3.3/BungeeGuard.jar /home/$USER/plugins/BungeeGuard.jar
+sudo chmod 777 *
+sudo mkdir BungeeGuard
+sudo chmod 777 *
+echo token: xGBJoYLgCayRvLkR0jTMuwBj4gmLHVXFrO5066zdLdNhfRLG279N8Nuh69nhPbKz >> /home/$USER/plugins/BungeeGuard/token.yml
+sudo chmod 777 *
+sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/waterfall_config.yml  /home/$USER/waterfall_config.yml 
+sudo chmod 777 *
+sudo mv /home/$USER/waterfall_config.yml /home/$USER/config.yml
+sudo chmod 777 *
+wsudo get https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/run.sh /home/$USER/run.sh
+sudo chmod 777 *
+sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/startserver.sh /home/$USER/startserver.sh
+sudo chmod 777 *
+sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/dynmap.sh -o /home/$USER/dynmap.sh
+sudo chmod 777 *
 
 
 #################################
