@@ -5,6 +5,21 @@ passwd root $private
 #usermod -a -G ubuntu ubunturoot
 #usermod -a -G root ubunturoot
 
+
+#echo  skyblock ALL=(ALL) NOPASSWD:ALL  >> /etc/sudoers.d/90-cloud-init-users
+#add user skyblock sudo
+
+#echo  survival ALL=(ALL) NOPASSWD:ALL  >> /etc/sudoers.d/90-cloud-init-users
+#add user survival sudo
+#3x
+
+#usermod -a -G survival ubunturoot
+#usermod -a -G skyblock ubunturoot
+
+#nano /etc/ssh/sshd_config <- AllowUsers survival
+#nano /etc/ssh/sshd_config <- AllowUsers skyblock
+
+
 echo PermitRootLogin yes >> /etc/ssh/sshd_config
 service ssh reload
 
