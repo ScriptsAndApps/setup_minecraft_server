@@ -223,7 +223,8 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
 	fi
 	if [[ "$os" = "debian" || "$os" = "ubuntu" ]]; then
 		apt-get update
-		apt-get install -y --no-install-recommends openvpn openssl ca-certificates $firewall
+		#apt-get install -y --no-install-recommends openvpn openssl ca-certificates $firewall
+		apt-get install -y --no-install-recommends openvpn openssl ca-certificates
 		systemctl enable openvpn-server@server
 	elif [[ "$os" = "centos" ]]; then
 		yum install -y epel-release
@@ -401,7 +402,7 @@ ExecStop=$ip6tables_path -D FORWARD -m state --state RELATED,ESTABLISHED -j ACCE
 		echo "RemainAfterExit=yes
 [Install]
 WantedBy=multi-user.target" >> /etc/systemd/system/openvpn-iptables.service
-		systemctl enable --now openvpn-iptables.service
+		#systemctl enable --now openvpn-iptables.service
 	fi
 	# If SELinux is enabled and a custom port was selected, we need this
 	if sestatus 2>/dev/null | grep "Current mode" | grep -q "enforcing" && [[ "$port" != 1194 ]]; then
