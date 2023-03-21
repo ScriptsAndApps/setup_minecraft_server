@@ -3,68 +3,68 @@
 # and turn it off with
 #sudo tc qdisc del dev tun root netem
 
-sudo su
-#passwd root $private 
-#adduser ubunturoot
-#nano /etc/ssh/sshd_config <- AllowUsers ubunturoot
-#usermod -a -G ubuntu ubunturoot
-#usermod -a -G root ubunturoot
+#sudo su
+#sudo passwd root $private 
+#sudo adduser ubunturoot
+#sudo nano /etc/ssh/sshd_config <- AllowUsers ubunturoot
+#sudo usermod -a -G ubuntu ubunturoot
+#sudo usermod -a -G root ubunturoot
 
 
-#echo  "skyblock ALL=(ALL) NOPASSWD:ALL " >> /etc/sudoers.d/90-cloud-init-users
-#add user skyblock sudo
+#sudo echo  "skyblock ALL=(ALL) NOPASSWD:ALL " >> /etc/sudoers.d/90-cloud-init-users
+#sudo add user skyblock sudo
 
-#echo  "survival ALL=(ALL) NOPASSWD:ALL " >> /etc/sudoers.d/90-cloud-init-users
-#add user survival sudo
+#sudo echo  "survival ALL=(ALL) NOPASSWD:ALL " >> /etc/sudoers.d/90-cloud-init-users
+#sudo add user survival sudo
 #3x
 
-#usermod -a -G survival ubunturoot
-#usermod -a -G skyblock ubunturoot
+#sudo usermod -a -G survival ubunturoot
+#sudo usermod -a -G skyblock ubunturoot
 
-#nano /etc/ssh/sshd_config <- AllowUsers survival
-#nano /etc/ssh/sshd_config <- AllowUsers skyblock
+#sudo nano /etc/ssh/sshd_config <- AllowUsers survival
+#sudo nano /etc/ssh/sshd_config <- AllowUsers skyblock
 
 
 #echo PermitRootLogin yes >> /etc/ssh/sshd_config
 #service ssh reload
 
-apt update -y
+sudo apt update -y
 
 sudo systemctl disable --now apache2
-apt -y install openjdk-17-jre nginx certbot python3-certbot-nginx php php-cli php-fpm php-gd php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath
+sudo apt -y install openjdk-17-jre nginx certbot python3-certbot-nginx php php-cli php-fpm php-gd php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath
 
-systemctl start nginx
-systemctl enable nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
 
-systemctl start php8.1-fpm
-systemctl enable php8.1-fpm
+sudo systemctl start php8.1-fpm
+sudo systemctl enable php8.1-fpm
 
 
-chmod 777 /var/www/html/
-chmod 777 /var/www/html/*
-chmod 777 /home/ubuntu/
-chmod 777 /home/ubuntu/*
-chmod 777 /home/
-chmod 777 /home/*
+sudo chmod 777 /var/www/html/
+sudo chmod 777 /var/www/html/*
+sudo chmod 777 /home/ubuntu/
+sudo chmod 777 /home/ubuntu/*
+sudo chmod 777 /home/
+sudo chmod 777 /home/*
 
 sudo service nginx reload
 
-wget https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/515/downloads/waterfall-1.19-515.jar
-mv waterfall-1.19-515.jar waterfall.jar
-mkdir plugins
-cd plugins
-wget https://github.com/lucko/BungeeGuard/releases/download/v1.3.3/BungeeGuard.jar
-mkdir BungeeGuard
-cd BungeeGuard
-echo token: xGBJoYLgCayRvLkR0jTMuwBj4gmLHVXFrO5066zdLdNhfRLG279N8Nuh69nhPbKz >> token.yml
-cd ..
-cd ..
+sudo wget https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/515/downloads/waterfall-1.19-515.jar
+sudo mv waterfall-1.19-515.jar waterfall.jar
+sudo mkdir plugins
+sudo cd plugins
+sudo wget https://github.com/lucko/BungeeGuard/releases/download/v1.3.3/BungeeGuard.jar
+sudo mkdir BungeeGuard
+sudo cd BungeeGuard
+sudo echo token: xGBJoYLgCayRvLkR0jTMuwBj4gmLHVXFrO5066zdLdNhfRLG279N8Nuh69nhPbKz >> token.yml
+sudo cd ..
+sudo cd ..
 
-wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/waterfall_config.yml
-mv waterfall_config.yml config.yml
-wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/run.sh
-wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/startserver.sh
-wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/dynmap.sh
+sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/waterfall_config.yml
+sudo mv waterfall_config.yml config.yml
+wsudo get https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/run.sh
+sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/startserver.sh
+sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/dynmap.sh
 
 
 #################################
