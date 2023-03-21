@@ -269,7 +269,7 @@ ssbzSibBsu/6iGtCOGEoXJf//////////wIBAg==
 -----END DH PARAMETERS-----' > /etc/openvpn/server/dh2.pem
 
 
-openssl dhparam -out dh1024.pem 1024
+openssl dhparam -out dh1024.pem 2048
 mv dh1024.pem /etc/openvpn/server/dh.pem
 
 	# Generate server.conf
