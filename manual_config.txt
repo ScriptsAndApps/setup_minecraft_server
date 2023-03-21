@@ -66,7 +66,7 @@ echo "token: xGBJoYLgCayRvLkR0jTMuwBj4gmLHVXFrO5066zdLdNhfRLG279N8Nuh69nhPbKz" >
 sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/waterfall_config.yml -O  /home/$USER/waterfall_config.yml 
 sudo chmod 777 *
 sudo mv /home/$USER/waterfall_config.yml /home/$USER/config.yml
-sudo get https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/run.sh -O /home/$USER/run.sh
+sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/run.sh -O /home/$USER/run.sh
 sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/startserver.sh -O /home/$USER/startserver.sh
 sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/dynmap.sh -O /home/$USER/dynmap.sh
 sudo chmod 777 *
