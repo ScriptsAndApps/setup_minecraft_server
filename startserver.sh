@@ -3,11 +3,11 @@
 
 
 #Path where mc should run - include the / at end and front
-HOMEPTH=/home/ubuntu/
+HOMEPTH=/home/ubuntu
 
 
-cd $HOMEPTHw
-JAR=$HOMEPTHwaterfall.jar
+cd $HOMEPTH/
+JAR=$HOMEPTH/waterfall.jar
 
 MAXRAM=2024M
 MINRAM=1024M
