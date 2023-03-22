@@ -84,6 +84,50 @@ sudo chmod 777 *
 nano /home/$USER/plugins/BungeeGuard/token.yml
 
 
+
+
+
+
+
+
+mkdir /home/$USER/plugins/RedisBungee
+echo '
+cluster-mode-enabled: false
+redis-cluster-servers:
+  - host: 51.75.163.59
+    port: 6379
+redis-server: 51.75.163.59
+redis-port: 6379
+redis-password: "mcredis"
+max-redis-connections: 10
+useSSL: false
+proxy-id: "'$USER'"
+enable-jedis-pool-compatibility: true
+compatibility-max-connections: 3
+register-legacy-commands: false
+override-bungee-commands: false
+exempt-ip-addresses: []
+# disable-kick-when-online: true
+config-version: 1
+' >> /home/$USER/plugins/RedisBungee/config.yml
+
+wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/RedisBungee-Bungee-0.10.2-SNAPSHOT.jar -O /home/$USER/plugins/RedisBungee-Bungee-0.10.2-SNAPSHOT.jar 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sudo rm startserver.sh
 
 
