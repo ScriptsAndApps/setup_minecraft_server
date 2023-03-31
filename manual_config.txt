@@ -71,6 +71,7 @@ sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/Geys
 
 sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/floodgate-bungee.jar -O /home/$USER/plugins/floodgate-bungee.jar
 
+sudo chmod 777 /home/$USER/plugins/*
 
 sudo wget https://github.com/lucko/BungeeGuard/releases/download/v1.3.3/BungeeGuard.jar -O /home/$USER/plugins/BungeeGuard.jar
 sudo mkdir /home/$USER/plugins/BungeeGuard
