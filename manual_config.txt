@@ -63,6 +63,15 @@ sudo wget https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/515/
 sudo mv /home/$USER/waterfall-1.19-515.jar /home/$USER/waterfall.jar
 sudo mkdir /home/$USER/plugins
 sudo chmod 777 /home/$USER/plugins/
+
+sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/Geyser-BungeeCord.jar -O /home/$USER/plugins/Geyser-BungeeCord.jar
+
+#sudo mkdir /home/$USER/plugins/Geyser-BungeeCord
+#sudo chmod 777 /home/$USER/plugins/Geyser-BungeeCord
+
+sudo wget https://github.com/ScriptsAndApps/setup_minecraft_server/raw/main/floodgate-bungee.jar -O /home/$USER/plugins/floodgate-bungee.jar
+
+
 sudo wget https://github.com/lucko/BungeeGuard/releases/download/v1.3.3/BungeeGuard.jar -O /home/$USER/plugins/BungeeGuard.jar
 sudo mkdir /home/$USER/plugins/BungeeGuard
 sudo chmod 777 /home/$USER/plugins/BungeeGuard
